@@ -1,0 +1,22 @@
+{
+  "name": "discord-hackweek",
+  "version": "1.0.0",
+  "description": "Tournament bot",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "Viking",
+    "bot",
+    "tournament",
+    "social"
+  ],
+  "author": "Wojciech Marciniak",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "discord.js": "^11.5.1",
+    "enmap": "^5.0.0"
+  }
+}

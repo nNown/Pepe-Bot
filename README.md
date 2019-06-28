@@ -10,6 +10,7 @@ You can use commands like:
 !kiss
 !ping
 
+Use npm run dev if you have nodemon installed globally or node index.js 
 ## License
 
 Bot is open source with MIT License, see License.md

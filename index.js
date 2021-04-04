@@ -2,12 +2,14 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const Enmap = require('enmap');
 const client = new Discord.Client();
-const { prefix, token } = require('./config/config.json')
+const { token } = require('./config/config.json')
+const db = require('./db/db');
 
 client.commands = new Enmap();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  require('./db/models/tag').sync();
 });
 
 fs.readdir('./events/', (err, files) => {
@@ -32,4 +34,7 @@ fs.readdir('./commands/', async (err, files) => {
     });
   });
 
+db.authenticate()
+  .then(() => console.log('Database connected'))
+  .catch(err => console.log(err));
 client.login(token);
